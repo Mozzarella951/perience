@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/href.css">
+    <title>Создание Проекта</title>
+</head>
+<style>
+    body {
+      background-image: url('static/X4P96LXsgfeo.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: #000;
+    }
+  </style>
+<body>
+    <div class="menu">
+        <button><a type="button" class="btn btn-danger btn-sm" href="/">Главная</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/">Друзья</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/account">Аккаунт</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/logout">Выйти</a></button>
+    </div>
+    <h1 class="titles">Создание проекта</h1>
+    <div class = "create_block">
+        <h2>Информация о проекте</h2>
+        <form action="/create_project", method = "post">
+            <h3>Название проекта</h3>
+            <input type="text" name = "name" class = "input">
+            <h3>Тема</h3>
+            <input type="text" name = "subject" class = "input">
+            <h3>Описание проекта</h3>
+            <textarea type="text" name = "about"></textarea>
+            <h3>Теги</h3>
+            <textarea type="text" name = "tags"></textarea>
+            <p><input type="submit" value = "Опубликовать" class ="publish"></p>
+        </form>
+    </div>
+</body>
+</html>

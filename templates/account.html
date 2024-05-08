@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static.href">
+  <title>Document</title>
+</head>
+
+<body>
+
+<input type="file" id = "avatar">
+
+<script>
+const sqlite3 = require('sqlite3').verbose();
+
+// Открываем соединение с базой данных
+const db = new sqlite3.Database('accounts.db', (err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log('Connected to the database.');
+});
+
+const fs = require('fs');
+
+// Чтение файла изображения
+const imageFile = document.querySelector('#avatar').files[0];
+const image = fs.readFileSync(imageFile.path);
+
+// Вставка изображения в базу данных
+db.serialize(() => {
+  const insertPhoto = db.prepare('INSERT INTO Users (photo) VALUES (?)');
+  insertPhoto.run(image);
+  insertPhoto.finalize();
+});
+
+
+// Закрываем соединение с базой данных
+db.close((err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log('Disconnected from the database.');
+});
+</script>
+  
+</body>
+</html>

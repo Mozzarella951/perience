@@ -1,0 +1,52 @@
+.titles {
+    color:#fff;
+    padding-left: 150px;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+.registration-block {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 0 auto;
+    top:50%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: translate(10%, 100%);
+    text-align: center;
+  }
+  
+  .registration-block h2 {
+    margin-bottom: 20px;
+  }
+  
+  .registration-block input {
+    width: 90%;
+    height:30%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .registration-block button {
+    background-color: #18a3cac6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+
+  }
+  .h2_reg {
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    color: #fff;
+  }
+  .hz {
+    color: #fff;
+  }
+  .www {
+    color:aliceblue;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  }

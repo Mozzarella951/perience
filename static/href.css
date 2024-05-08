@@ -1,0 +1,197 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.project_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.block_project1 {
+  background-color: #e87575;
+  border-radius: 50px;
+  margin: 10px;
+  height: 300px;
+}
+
+.block_project2 {
+  background-color: #c85a5a;
+  border-radius: 50px;
+  margin: 10px;
+  height: 300px;
+}
+.block_project3 {
+  background-color: #a43f3f;
+  border-radius: 50px;
+  margin: 10px;
+  height: 300px;
+}
+.block_project4 {
+  background-color: #6d2626;
+  border-radius: 50px;
+  margin: 10px;
+  height: 300px;
+}
+.hackathon1 {
+  background-color: #69d56f;
+  border-radius: 50px;
+  margin: 10px;
+  height: 300px;
+}
+.hackathon2 {
+  background-color: #4cba44;
+  border-radius: 50px;
+  margin: 10px;
+  height: 300px;
+}
+.exersice1 {
+  background-color: #7acbee;
+  border-radius: 50px;
+  margin: 10px;
+  height: 300px;
+}
+.exersice2 {
+  background-color: #3ba3cf;
+  border-radius: 50px;
+  margin: 10px;
+  height: 300px;
+}
+.titles {
+  color:#fff;
+  padding-left: 150px;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+.menu {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  backdrop-filter: blur(3px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin-top: 20px;
+  width: 30%; /* Ширина меню, можно настроить по вашему усмотрению */
+  z-index: 999; /* Помещаем меню поверх других элементов */
+}
+
+button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px; /* Отступ между кнопками */
+  cursor: pointer;
+}
+
+a {
+    color: white; /* устанавливаем белый цвет текста для ссылок */
+    text-decoration: none; /* убираем подчеркивание ссылок */
+}
+
+a:hover {
+    color: white; /* устанавливаем белый цвет текста для ссылок при наведении */
+}
+
+.logo {
+  margin-left: auto;
+}
+.container h2 {
+  color:#fff;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 30px;
+  padding-left: 50px;
+}
+
+html, body {
+  height: 100%; /* Задаем высоту всего сайта */
+}
+
+.create_block {
+  width: 70%;
+  height: 70%;
+  transform: translate(20%, 30%);
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  background-color:#fff;
+}
+
+.create_block h2{
+  color:#232323;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 30px;
+  padding-left: 50px;
+}
+.create_block h3{
+  color:#232323;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-size: 23px;
+  padding-left: 50px;
+}
+
+.input {
+  width:40%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding:10px;
+  margin-left: 50px;
+}
+
+.create_block textarea {
+  border: 1px solid #ccc;
+  width:43%;
+  border-radius: 10px;
+  margin-left: 50px;
+}
+
+.publish {
+  width:20%;
+  color:#fff;
+  background-color: #b430d1;
+  border-radius:10px;
+  border: none;
+  height: 30px;
+  margin-left: 50px;
+}
+
+.block {
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  margin: 3%;
+  border:none;
+}
+
+.block-top {
+  background-color: #ed7a7a;
+  color: #fff;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  text-align: center;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  border-top-left-radius: 28px; /* скруглим углы верхушки */
+  border-top-right-radius: 28px;
+  margin-top: 0;
+}
+
+li {
+  list-style-type: none;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-weight: bold;
+}
+
+.tags {
+  background-color: #3ba3cf;
+  color: white;
+  padding: 5px;
+}

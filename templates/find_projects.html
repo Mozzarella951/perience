@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/href.css">
+    <title>Поиск проектов</title>
+</head>
+<style>
+    body {
+      background-image: url('static/X4P96LXsgfeo.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: #000;
+    }
+  </style>
+<body>
+    <div class="menu">
+        <button><a type="button" class="btn btn-danger btn-sm" href="/">Главная</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/">Друзья</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/account">Аккаунт</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/logout">Выйти</a></button>
+    </div>
+
+    <h1 class="titles">Проекты</h1>
+    <div class = "project_container">
+        {% for project in projects %}
+            <div class="block">
+                <div class="block-top">
+                    <h2>{{ project[1] }}</h2>
+                </div>
+                <div class="block-content">
+                    <ul>
+                        <p><li>Автор: {{ project[0] }}</li></p>
+                        <p><li>Тема: {{ project[2] }}</li></p>
+                        <p><li>Описание:{{ project[3] }}</li></p>
+                        <span class="badge rounded-pill" style="background-color: #9d698f;">{{ project[4]}}</span>
+                    </ul>
+                </div>
+            </div>
+            
+        {%endfor%}
+    </div>
+
+</body>
+</html>
