@@ -17,8 +17,9 @@ def create_db():
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS Users (
     login TEXT,
-    password TEXT
-    photo
+    password TEXT,
+    about_me TEXT,
+    photo TEXT
     );
     ''')
 
@@ -131,7 +132,12 @@ def creating_projects():
 
 @app.route('/account')
 def your_acc():
-    return render_template('account.html')
+    user_name=session.get('login')
+    return render_template('account.html', user = user_name)
+
+@app.route('/change_the_avatar')
+def change_avatar():
+    ava_name = request.form.get('avatar')
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5003)
+    app.run(debug=True, port=5009)

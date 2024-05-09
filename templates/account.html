@@ -3,47 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="static.href">
+  <link rel="stylesheet" href="static/href.css">
   <title>Document</title>
 </head>
-
 <body>
 
-<input type="file" id = "avatar">
+<div class="circle-image">
+  <div class = "acc_info">
+    <h1>{{ user }}</h1>
+    <img src="static/Telegram.webp">
+    <b>че</b>
+    <img src="static/gh.png">
+    <b>че</b>
+    <img src="static/settings.png" alt="">
+    <a href="/settings">ссылка</a>
+  </div>
+  <img src="static/download.jpg"/>
+</div>  
 
-<script>
-const sqlite3 = require('sqlite3').verbose();
-
-// Открываем соединение с базой данных
-const db = new sqlite3.Database('accounts.db', (err) => {
-  if (err) {
-    console.error(err.message);
-  }
-  console.log('Connected to the database.');
-});
-
-const fs = require('fs');
-
-// Чтение файла изображения
-const imageFile = document.querySelector('#avatar').files[0];
-const image = fs.readFileSync(imageFile.path);
-
-// Вставка изображения в базу данных
-db.serialize(() => {
-  const insertPhoto = db.prepare('INSERT INTO Users (photo) VALUES (?)');
-  insertPhoto.run(image);
-  insertPhoto.finalize();
-});
-
-
-// Закрываем соединение с базой данных
-db.close((err) => {
-  if (err) {
-    console.error(err.message);
-  }
-  console.log('Disconnected from the database.');
-});
-</script>
-  
 </body>
 </html>
