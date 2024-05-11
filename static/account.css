@@ -1,0 +1,76 @@
+.menu {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(3px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin-top: 20px;
+    width: 30%; /* Ширина меню, можно настроить по вашему усмотрению */
+    z-index: 999; /* Помещаем меню поверх других элементов */
+}
+button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px; /* Отступ между кнопками */
+  cursor: pointer;
+}
+a {
+    color: white; /* устанавливаем белый цвет текста для ссылок */
+    text-decoration: none; /* убираем подчеркивание ссылок */
+}
+
+a:hover {
+    color: white; /* устанавливаем белый цвет текста для ссылок при наведении */
+}
+
+h1 {
+    color: #fff;
+}
+
+.circle-image{
+    display: inline-block;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.circle-image img{
+    width: 100%;
+  
+}
+
+.info-acc {
+    padding-left: 30px;
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 3%;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.about-me {
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 3%;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+li {
+    list-style-type: none;
+}
+li a{
+    display: flex;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    margin: 31px 0;
+}
+ li img {
+    width:50px;
+ }

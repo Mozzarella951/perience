@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/hackathon.css">
+</head>
+<style>
+    body {
+      background-image: url('static/X4P96LXsgfeo.webp');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: #000;
+    }
+  </style>
+<body>
+    <div class="menu">
+        <button><a type="button" class="btn btn-danger btn-sm" href="/">Главная</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/">Уведомления</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/account">Аккаунт</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/logout">Выйти</a></button>
+      </div>
+    <h1 class="titles">Создание хакатона</h1>
+    <div class = "create_block">
+        <h2>Информация о хакатоне</h2>
+        <form action="/create_hack", method = "post">
+            <h3>Название хакатона</h3>
+            <input type="text" name = "name" class = "input">
+            <h3>Описание хакатона</h3>
+            <textarea type="text" name = "about"></textarea>
+            <h3>Теги</h3>
+            <textarea type="text" name = "tags"></textarea>
+            <h3>Дата окончания регистрации:</h3>
+            <input type="date" name="date">
+            <h3>Ссылка на Discord:</h3>
+            <input type="text" name="hrefs">
+            
+            <h3>Максимальное кол-во сокомандников:</h3>
+            <input type="text" name="maxmates">
+            <p><input type="submit" value = "Опубликовать" class ="input"></p>
+        </form>
+    </div>
+</body>
+</html>

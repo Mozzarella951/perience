@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/hackathon.css">
+    <title>Document</title>
+</head>
+<style>
+  body {
+    background-image: url('static/X4P96LXsgfeo.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000;
+  }
+</style>
+
+
+<body>
+<script>
+  let currentDate = new Date();
+  console.log(currentDate);
+</script>
+<div class="menu">
+  <button><a type="button" class="btn btn-danger btn-sm" href="/">Главная</a></button>
+  <button><a type="button" class="btn btn-danger btn-sm" href="/">Уведомления</a></button>
+  <button><a type="button" class="btn btn-danger btn-sm" href="/account">Аккаунт</a></button>
+  <button><a type="button" class="btn btn-danger btn-sm" href="/logout">Выйти</a></button>
+</div>
+
+      <div class = switch-block>
+        <h2><a href="/hackathons">Каталог</a></h2>]
+      </div>
+    
+      <div class="hackathons">
+        {% for hackathon in hackathons %}
+          <div class="hackathon">
+            <div class="block-top">
+              <h2>{{ hackathon[1] }}</h2>
+          </div>
+          <ul>
+            <p><li>Регистрауия до:{{ hackathon[4] }}</li></p>
+            <p><li>Автор: {{ hackathon[0] }}</li></p>
+            <p><li>Описание:{{ hackathon[2] }}</li></p>
+            <p><li>Макс кол-во сокомандников:{{ hackathon[5] }}</li></p>
+            <p><li>Тэги:{{ hackathon[3] }}</li></p>
+        </ul>
+          </div>
+        {%endfor%}
+      </div>
+</body>
+</html>
