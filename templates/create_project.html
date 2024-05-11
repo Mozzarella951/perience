@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="static/href.css">
     <title>Создание Проекта</title>
 </head>
+
 <style>
     body {
       background-image: url('static/X4P96LXsgfeo.webp');
@@ -17,10 +18,10 @@
 <body>
     <div class="menu">
         <button><a type="button" class="btn btn-danger btn-sm" href="/">Главная</a></button>
-        <button><a type="button" class="btn btn-danger btn-sm" href="/">Друзья</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/">Уведомления</a></button>
         <button><a type="button" class="btn btn-danger btn-sm" href="/account">Аккаунт</a></button>
         <button><a type="button" class="btn btn-danger btn-sm" href="/logout">Выйти</a></button>
-    </div>
+      </div>
     <h1 class="titles">Создание проекта</h1>
     <div class = "create_block">
         <h2>Информация о проекте</h2>
@@ -31,9 +32,10 @@
             <input type="text" name = "subject" class = "input">
             <h3>Описание проекта</h3>
             <textarea type="text" name = "about"></textarea>
+
             <h3>Теги</h3>
-            <textarea type="text" name = "tags"></textarea>
-            <p><input type="submit" value = "Опубликовать" class ="publish"></p>
+            <input type="text" class = "input" name = "tags"></input>
+            <p><input type="submit" value = "Опубликовать" class ="input"></p>
         </form>
     </div>
 </body>

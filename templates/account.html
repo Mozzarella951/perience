@@ -3,23 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="static/href.css">
+  <link rel="stylesheet" href="static/account.css">
   <title>Document</title>
 </head>
+
+<style>
+  body {
+    background-image: url('static/X4P96LXsgfeo.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #000;
+  }
+</style>
+
 <body>
 
-<div class="circle-image">
-  <div class = "acc_info">
-    <h1>{{ user }}</h1>
-    <img src="static/Telegram.webp">
-    <b>че</b>
-    <img src="static/gh.png">
-    <b>че</b>
-    <img src="static/settings.png" alt="">
-    <a href="/settings">ссылка</a>
+  <div class="menu">
+    <button><a type="button" class="btn btn-danger btn-sm" href="/">Главная</a></button>
+    <button><a type="button" class="btn btn-danger btn-sm" href="/">Уведомления</a></button>
+    <button><a type="button" class="btn btn-danger btn-sm" href="/account">Аккаунт</a></button>
+    <button><a type="button" class="btn btn-danger btn-sm" href="/logout">Выйти</a></button>
   </div>
-  <img src="static/download.jpg"/>
+<div class="circle-image">
+  <img src="static/download.jpg">
+</div>
+
+<div class = "info-acc" style="display: inline-block;">
+
+  <h1>info-acc</h1>
+
+  <ul style="display: inline-block;">
+    <li class = "tgit">
+    <img src="static/Telegram.webp">
+    <!--  -->
+    </li>
+
+    <li class = "tgit">
+      <img src="static/github 1.png">
+      <!--  -->
+    </li>
+
+    <li class = "tgit">
+      <img src="static/settings.png">
+      <!--  -->
+    </li>
+  </ul>
+
+  <ul style="position: absolute; top: 13%; display: inline-block; padding-left: 5px; vertical-align: center;">
+    <li><a href="https://web.telegram.org/k/#@olluh_228">https://web.telegram.org/k/#@olluh_228</a></li>
+    <li><a href="https://github.com/Mozzarella951/perience">https://github.com/Mozzarella951/perience</a></li>
+    <li><a href="/settings">settings</a></li>
+  </ul>
 </div>  
+
+
+<div class = "about-me">
+  <h1>about me</h1>
+</div>
 
 </body>
 </html>

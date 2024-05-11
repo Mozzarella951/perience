@@ -29,7 +29,18 @@ def create_db():
     name TEXT,
     subject TEXT,
     about TEXT,
-    tags TEXT
+    tags list
+    );
+    ''')
+
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Hackathons (
+    author TEXT,
+    name TEXT,
+    about TEXT,
+    tags list,
+    time INTEGER,
+    max_mates INTEGER
     );
     ''')
     conn.commit()
@@ -106,8 +117,10 @@ def find_projects():
     conn = get_db_connection()
     cursor = conn.cursor()
 
-    projects = cursor.execute('''SELECT * FROM projects''').fetchall()
+    projects = cursor.execute('''SELECT * FROM Projects''').fetchall()
     print(projects)
+    cursor.execute('''SELECT tags FROM Projects WHERE author = "Wall_street" ''')
+    print(cursor.fetchall())
     return render_template('find_projects.html', projects=projects)
 
 @app.route('/create_project')
@@ -128,7 +141,7 @@ def creating_projects():
     conn.commit()
     conn.close()
 
-    return redirect('/')
+    return redirect('/projects ')
 
 @app.route('/account')
 def your_acc():
@@ -139,5 +152,37 @@ def your_acc():
 def change_avatar():
     ava_name = request.form.get('avatar')
 
+@app.route('/hackathons')
+def the_hack():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    hackathons = cursor.execute('''SELECT * FROM Hackathons''').fetchall()
+    return render_template("hackathons.html", hackathons = hackathons)
+
+@app.route('/creation_hack')
+def create_hack():
+    return render_template("create_hack.html")
+
+@app.route('/create_hack', methods = ['POST'])
+def create_hackathon():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    author = session.get('login')
+    name = request.form.get('name')
+    about = request.form.get('about')
+    tags = request.form.get('tags')
+    date = request.form.get('date')
+    hrefs = request.form.get('hrefs')
+    maxmates = request.form.get('maxmates')
+
+    print(date)
+
+    cursor.execute('INSERT INTO Hackathons (author, name, about, tags, time, max_mates) VALUES (?, ?, ?, ?, ?, ?)', (author, name, about, tags, date, maxmates))
+    conn.commit()
+    conn.close()
+    return redirect('/hackathons')
+
 if __name__ == '__main__':
-    app.run(debug=True, port=5009)
+    app.run(debug=True, port=5008)
