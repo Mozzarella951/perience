@@ -18,7 +18,7 @@
     <div class="menu">
         <button><a type="button" class="btn btn-danger btn-sm" href="/">Главная</a></button>
         <button><a type="button" class="btn btn-danger btn-sm" href="/">Уведомления</a></button>
-        <button><a type="button" class="btn btn-danger btn-sm" href="/account">Аккаунт</a></button>
+        <button><a type="button" class="btn btn-danger btn-sm" href="/account/{{ id }}">Аккаунт</a></button>
         <button><a type="button" class="btn btn-danger btn-sm" href="/logout">Выйти</a></button>
       </div>
 
@@ -33,8 +33,29 @@
                     <ul>
                         <p><li>Автор: {{ project[0] }}</li></p>
                         <p><li>Тема: {{ project[2] }}</li></p>
-                        <p><li>Описание:{{ project[3] }}</li></p>
+                        <p><li id="about-proj">Описание:{{ project[3] }}</li></p>
+                        <script>
+                            var aboutProjs = document.querySelectorAll('#about-proj');
+                        
+                            aboutProjs.forEach(function(aboutProj) {
+                                var maxLength = 60;
+                                var fullDescription = aboutProj.innerText;
+                                
+                                if (fullDescription.length > maxLength) {
+                                    aboutProj.innerText = fullDescription.substring(0, maxLength) + "...";
+                                    var readMoreLink = document.createElement('a');
+                                    readMoreLink.style = 'color: #434343'
+                                    readMoreLink.href = '#';
+                                    readMoreLink.innerText = 'Читать далее';
+                                    readMoreLink.addEventListener('click', function() {
+                                        aboutProj.innerText = fullDescription;
+                                    });
+                                    aboutProj.appendChild(readMoreLink);
+                                }
+                            });
+                        </script>
                         <span class="badge rounded-pill" style="background-color: #9d698f;">{{ project[4]}}</span>
+                        <p><form action="/join_the_project", method = "post"><button class="join" type="submit">Присоединиться к проекту</button></form></p>
                     </ul>
                 </div>
             </div>

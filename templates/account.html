@@ -21,16 +21,18 @@
   <div class="menu">
     <button><a type="button" class="btn btn-danger btn-sm" href="/">Главная</a></button>
     <button><a type="button" class="btn btn-danger btn-sm" href="/">Уведомления</a></button>
-    <button><a type="button" class="btn btn-danger btn-sm" href="/account">Аккаунт</a></button>
+    <button><a type="button" class="btn btn-danger btn-sm" href="/account/{{ id }}">Аккаунт</a></button>
     <button><a type="button" class="btn btn-danger btn-sm" href="/logout">Выйти</a></button>
   </div>
-<div class="circle-image">
+
+<div style="padding-left: 80px;">
+  <div class="circle-image">
   <img src="static/download.jpg">
 </div>
 
 <div class = "info-acc" style="display: inline-block;">
 
-  <h1>info-acc</h1>
+  <h1>{{ user }}</h1>
 
   <ul style="display: inline-block;">
     <li class = "tgit">
@@ -44,14 +46,14 @@
     </li>
 
     <li class = "tgit">
-      <img src="static/settings.png">
+      <img src="static/1488.png">
       <!--  -->
     </li>
   </ul>
 
   <ul style="position: absolute; top: 13%; display: inline-block; padding-left: 5px; vertical-align: center;">
-    <li><a href="https://web.telegram.org/k/#@olluh_228">https://web.telegram.org/k/#@olluh_228</a></li>
-    <li><a href="https://github.com/Mozzarella951/perience">https://github.com/Mozzarella951/perience</a></li>
+    <li><a href= "{{ telegram }}" target="_blank">{{ telegram }}</a></li>
+    <li><a href="{{ github }}" target="_blank">{{ github }}</a></li>
     <li><a href="/settings">settings</a></li>
   </ul>
 </div>  
@@ -59,7 +61,32 @@
 
 <div class = "about-me">
   <h1>about me</h1>
+  <div class="block-about">
+    <strong>{{ about }}</strong>
+  </div>
 </div>
+</div>
+
+<h1 class="titles">Мои Проекты</h1>
+
+<div class = "project_container">
+  {% for project in projects %}
+      <div class="block">
+          <div class="block-top">
+              <h2>{{ project[1] }}</h2>
+          </div>
+          <div class="block-content">
+              <ul>
+                  <p><li>Тема: {{ project[2] }}</li></p>
+                  <p><li>Описание:{{ project[3] }}</li></p>
+                  <span class="badge rounded-pill" style="background-color: #9d698f;">{{ project[4]}}</span>
+              </ul>
+          </div>
+      </div>
+      
+  {%endfor%}
+</div>
+
 
 </body>
 </html>
