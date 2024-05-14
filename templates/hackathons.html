@@ -23,7 +23,7 @@
 </script>
 <div class="menu">
   <button><a type="button" class="btn btn-danger btn-sm" href="/">Главная</a></button>
-  <button><a type="button" class="btn btn-danger btn-sm" href="/">Уведомления</a></button>
+  <button><a type="button" class="btn btn-danger btn-sm" href="/nofications">Уведомления</a></button>
   <button><a type="button" class="btn btn-danger btn-sm" href="/account/{{ id }}">Аккаунт</a></button>
   <button><a type="button" class="btn btn-danger btn-sm" href="/logout">Выйти</a></button>
 </div>
@@ -39,11 +39,23 @@
               <h2>{{ hackathon[1] }}</h2>
           </div>
           <ul>
-            <p><li>Регистрауия до:{{ hackathon[4] }}</li></p>
             <p><li>Автор: {{ hackathon[0] }}</li></p>
-            <p><li>Описание:{{ hackathon[2] }}</li></p>
-            <p><li>Макс кол-во сокомандников:{{ hackathon[5] }}</li></p>
-            <p><li>Тэги:{{ hackathon[3] }}</li></p>
+            <p><li>Макс кол-во сокомандников:{{ hackathon[4] }}</li></p>
+            <p><li id="about-proj">Описание:{{ hackathon[2] }}</li></p>
+            <script>
+              var aboutProjs = document.querySelectorAll('#about-proj');
+          
+              aboutProjs.forEach(function(aboutProj) {
+                  var maxLength = 70;
+                  var fullDescription = aboutProj.innerText;
+                  if (fullDescription.length > maxLength) {
+                      aboutProj.innerText = fullDescription.substring(0, maxLength) + "...";
+                  }
+              });
+            </script>
+            <p><li>Discord: {{ hackathon[5] }}</li></p>
+            <p><li>Регистрация до:{{ hackathon[3] }}</li></p>
+            <p><a class="join" href = "/hackathons/{{ hackathon[6] }}" class="join">Подробнее...</a></p>
         </ul>
           </div>
         {%endfor%}

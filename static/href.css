@@ -85,6 +85,13 @@
   z-index: 999; /* Помещаем меню поверх других элементов */
 }
 
+.small {
+  z-index: 999;
+  color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  left:0; bottom: 0;
+}
+
 button {
   background-color: transparent;
   color: #fff;
@@ -196,9 +203,8 @@ textarea {
 }
 
 .join {
-  color:#ffffff;
-  background-color: #eb8686;
-  border-radius: 8px;
+  color:#000000;
+  font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
   width:60%;
-  margin-left: 65px;
 }
+

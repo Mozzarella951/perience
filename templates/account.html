@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="static/account.css">
   <title>Document</title>
+  <link rel="stylesheet" href="/static/accounts.css">
 </head>
 
 <style>
   body {
-    background-image: url('static/X4P96LXsgfeo.webp');
+    background-image: url('/static/X4P96LXsgfeo.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #000;
@@ -20,14 +20,14 @@
 
   <div class="menu">
     <button><a type="button" class="btn btn-danger btn-sm" href="/">Главная</a></button>
-    <button><a type="button" class="btn btn-danger btn-sm" href="/">Уведомления</a></button>
+    <button><a type="button" class="btn btn-danger btn-sm" href="/nofications">Уведомления</a></button>
     <button><a type="button" class="btn btn-danger btn-sm" href="/account/{{ id }}">Аккаунт</a></button>
     <button><a type="button" class="btn btn-danger btn-sm" href="/logout">Выйти</a></button>
   </div>
 
 <div style="padding-left: 80px;">
   <div class="circle-image">
-  <img src="static/download.jpg">
+  <img src="/static/download.jpg">
 </div>
 
 <div class = "info-acc" style="display: inline-block;">
@@ -36,17 +36,17 @@
 
   <ul style="display: inline-block;">
     <li class = "tgit">
-    <img src="static/Telegram.webp">
+    <img src="/static/Telegram.webp">
     <!--  -->
     </li>
 
     <li class = "tgit">
-      <img src="static/github 1.png">
+      <img src="/static/github 1.png">
       <!--  -->
     </li>
 
     <li class = "tgit">
-      <img src="static/1488.png">
+      <img src="/static/1488.png">
       <!--  -->
     </li>
   </ul>
@@ -78,7 +78,18 @@
           <div class="block-content">
               <ul>
                   <p><li>Тема: {{ project[2] }}</li></p>
-                  <p><li>Описание:{{ project[3] }}</li></p>
+                  <p><li id="about-proj">Описание:{{ project[3] }}</li></p>
+                  <script>
+                    var aboutProjs = document.querySelectorAll('#about-proj');
+                
+                    aboutProjs.forEach(function(aboutProj) {
+                        var maxLength = 60;
+                        var fullDescription = aboutProj.innerText;
+                        if (fullDescription.length > maxLength) {
+                            aboutProj.innerText = fullDescription.substring(0, maxLength) + "...";
+                        }
+                    });
+                </script>
                   <span class="badge rounded-pill" style="background-color: #9d698f;">{{ project[4]}}</span>
               </ul>
           </div>

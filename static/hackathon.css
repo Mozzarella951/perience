@@ -123,3 +123,23 @@ button {
     width:41%;
     margin-left: 50px;
   }
+  .block-text {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 30px;
+  }
+  strong {
+    padding-left: 50px;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+  }
+  .h_pro {
+    background-color: #69d56f;
+  }
+  .h_hack{
+    background-color: #69d56f;
+  }
+  .join {
+    color:#000000;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    width:60%;
+  }
